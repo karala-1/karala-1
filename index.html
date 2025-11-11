@@ -390,6 +390,47 @@
         </div>
     
         </div>
+  
+
+  <form id="contact-form">
+    <label>Tu Nombre</label>
+    <input type="text" name="name" placeholder="Nombre completo" required>
+
+    <label>Tu Email</label>
+    <input type="email" name="email" placeholder="Correo electrónico" required>
+
+    <label>Asunto</label>
+    <input type="text" name="title" placeholder="Asunto" required>
+
+    <label>Mensaje</label>
+    <textarea name="message" placeholder="Escribe tu mensaje..." required></textarea>
+
+    <button type="submit">Enviar mensaje</button>
+  </form>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("lNuE56CUbhXgEeteX"); // 🔹 pega tu Public Key
+    })();
+
+    const form = document.getElementById('contact-form');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      emailjs.sendForm('service_oyguj4g', 'template_xrc3c69', this)
+        .then(() => {
+          alert('✅ Mensaje enviado correctamente.');
+          form.reset();
+        }, (error) => {
+          alert('❌ Error al enviar: ' + JSON.stringify(error));
+        });
+    });
+  </script>
+
+</body>
+</html>
     </section>
     
     <script>
@@ -418,5 +459,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
+
 
 
