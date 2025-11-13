@@ -10,13 +10,17 @@
 <body>
   <!-- NAVBAR -->
   <nav>
-    <ul>
+  <div class="menu-container">
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <ul class="nav-links">
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#sobre-mi">Sobre Mí</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
-  </nav>
+  </div>
+</nav>
+
 
   <!-- INICIO -->
   <section id="inicio" class="section inicio">
@@ -453,12 +457,21 @@
             alert('Se abrirá tu cliente de correo para enviar el mensaje. Si no se abre automáticamente, copia y pega el mensaje en tu cliente de correo.');
         });
     </script>
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const links = document.querySelector('.nav-links');
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('active');
+  });
+</script>
+
 </body>
 </html>
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
+
 
 
 
